@@ -7,6 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaJsonProducer {
 
-
+    @Qualifier("studentKafkaTemplate")
     private final KafkaTemplate<String, Student> kafkaTemplate;
 
 
